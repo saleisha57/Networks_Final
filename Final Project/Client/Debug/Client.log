@@ -1,0 +1,10 @@
+﻿  client_main.cpp
+c:\users\abagnall-smith20\desktop\final project\socket.h(206): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(41): error C2371: 'players': redefinition; different basic types
+  c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(35): note: see declaration of 'players'
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(52): error C2088: '[': illegal for class
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(52): error C2228: left of '.sock_connect' must have class/struct/union
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(61): error C2088: '[': illegal for class
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(61): error C2228: left of '.sock_connect' must have class/struct/union
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(70): error C2088: '[': illegal for class
+c:\users\abagnall-smith20\desktop\final project\client\client_main.cpp(70): error C2228: left of '.sock_connect' must have class/struct/union

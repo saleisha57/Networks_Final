@@ -1,0 +1,4 @@
+﻿  server_main.cpp
+c:\users\abagnall-smith20\desktop\final project\socket.h(207): warning C4018: '<': signed/unsigned mismatch
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project\Debug\Server.exe
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project\Debug\Server.pdb (Partial PDB)
