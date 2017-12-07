@@ -10,7 +10,9 @@
 #include <mutex>
 #include <list>
 #include <string>
+#include <map>
 
+#include "Deck.h"
 #include "../Socket.h"
 
 using namespace std;

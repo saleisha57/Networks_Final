@@ -1,4 +1,2 @@
 ﻿  client_main.cpp
-c:\users\abagnall-smith20\desktop\final project networks\socket.h(207): warning C4018: '<': signed/unsigned mismatch
-  Client.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Client.exe
-  Client.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Client.pdb (Partial PDB)
+c:\users\abagnall-smith20\desktop\final project networks\client\client_main.cpp : fatal error C1041: cannot open program database 'C:\Users\abagnall-smith20\Desktop\Final Project Networks\Client\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS

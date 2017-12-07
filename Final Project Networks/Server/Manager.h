@@ -9,6 +9,14 @@ Function class for execution in each thread spawned for a connection
 class Manager {
 private:
 	Socket *player;	// Socket for which this thread is responsible
+
+	Deck DECK;
+	vector<string> the_deck = DECK.get_DECK(); // Retrieves the deck from the class in the header file
+	vector<string> player_hand;
+	vector<string> player_foot;
+	vector<string> drawed_cards;
+	vector<string> top_discard_cards;
+	map<string, int> point_rules;
 	//std::string Name;		// Name of the person connecting
 
 	static mutex player_lock;	// Global static lock for friends list
@@ -50,6 +58,12 @@ private:
 		}
 	}
 
+
+
+
+
+
+
 public:
 	Manager(Socket *socket) {
 		player = socket;
@@ -61,6 +75,10 @@ public:
 			std::string msg;
 			player->msg_send("hello");
 			msg = player->msg_recv();
+
+
+
+
 			if (msg == "") {
 				cout << "One listener exiting!\n";
 				remove_listener();
@@ -72,6 +90,37 @@ public:
 			}
 		} while (true);
 	}
+
+
+	void get_stuff()
+	{
+		for (int i = 0; i < 11; i++)
+		{
+			player_hand.push_back(the_deck[i]);
+		}
+		the_deck.erase(the_deck.begin(), the_deck.begin() + 11);
+
+		for (int i = 0; i < 11; i++)
+		{
+			player_foot.push_back(the_deck[i]);
+		}
+		the_deck.erase(the_deck.begin(), the_deck.begin() + 11);
+	}
+
+	vector<string> get_hand()
+	{
+		return player_hand;
+	}
+
+
+	vector<string> get_foot()
+	{
+		return player_foot;
+	}
+
+
+
+
 };
 
 mutex Manager::player_lock;
