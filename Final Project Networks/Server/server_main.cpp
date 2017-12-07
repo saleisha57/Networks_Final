@@ -1,17 +1,12 @@
-#include <windows.h>
-#include <winsock.h>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <thread>
+#include "base.h"
 #include "Manager.h"
-#include "../Socket.h"
 
 using namespace std;
 
 const int PORT1 = 50001;
 
 
+// Function to ask about going again.
 bool go_again()
 {
 	char resp[100];
@@ -42,7 +37,7 @@ int main()
 			return -1;
 		}
 
-
+		// Create two sockets called 'server1' and 'conn'.
 		Socket server1("tcp");
 		Socket *conn;
 
@@ -62,48 +57,27 @@ int main()
 		}
 		cout << "Server is now listening on port " << PORT1 << endl;
 
-		//Socket conn = server.sock_accept();
-
-		 // Source: relay_server which was written by Kent Jones.
-
+		// Code Snippet Below Source: 'relay_server.cpp' which was written by Kent Jones.
+		// Set up threads that will manage the player threads.
 		do {
-			conn = server1.sock_accept(); // waiting to receive a connection 
-			cout << "Got a chat connection! \n";
-			Manager *server = new Manager(conn); // create the functor
-			thread * thr = new thread(*server); // spawn the thread
-			thr->detach();   // detach it since we don't need to wait on it
-							 // Go back to accept a new connection now!!
-		} while (true);
+			conn = server1.sock_accept();                // Waiting to receive a connection. 
+			cout << "Connection made \n";                // Display when a connection is set up.
+			Manager *m = new Manager(conn);              // Create a manager object to use with the thread.
+			thread *thr = new thread(*m);                // Create a thread.
+			thr->detach();                               // Detach the thread.						
+		} while (true);                                  // Do while loop.
 
 
+		// Citations in documentation
 
-
-		/*do {
-			Socket conn = server.sock_accept();
-			cout << "Connection made";
-			Manager *m = new Manager(conn);
-			thread *thr = new thread(*m);
-			thr->detach();
-		} while (true);*/
-		
-
-
-
-
+		// Call the go again function.
 		again = go_again();
 
-
-
-
-
-
-
-		//system("pause");
 
 	}
 
 
-	//done("Press enter to exit");
+	done("Press enter to exit");
 
 
 

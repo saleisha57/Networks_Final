@@ -1,71 +1,80 @@
 #ifndef __MANAGER_H__
 #define __MANAGER_H__
+#include "base.h"
 
-#include <iostream>
-#include <string>
-#include "../Socket.h"
-#include <list>
-
-using namespace std;
-
-// Inspired by "Service.h" which was written by Ed Walker
-
+/**
+Function class for execution in each thread spawned for a connection
+@author: Ed Walker
+*/
 class Manager {
-public:
-	Manager(Socket *socket)
-	{
-		player = socket;
-		add_player();
-	}
-
-	//list<Socket *> Manager::player_list;
-
-	//void operator()()
-	//{
-	//	do {
-	//		string msg = player->msg_rcv();
-	//		send_to_all(msg);
-	//	} while (true);
-	//}
-
-
 private:
-	Socket *player;
-	static list<Socket *> player_list;
+	Socket *player;	// Socket for which this thread is responsible
+	//std::string Name;		// Name of the person connecting
 
-	void add_player()
-	{
-		player_list.push_back(player);
-	}
+	static mutex player_lock;	// Global static lock for friends list
+	static list<Socket *> friends_list; // Global static keeping track of all friends
 
+	void send_to_all_friends(std::string msg) {
+		// Step 3: Add code to send to all friends
+		std::lock_guard<std::mutex> lk(player_lock);
 
-	void send_to_all(string msg)
-	{
+		//std::string send_msg = Name + ": " + msg;
+
 		list<Socket *>::iterator it;
-		for (it = player_list.begin(); it != player_list.end(); ++it) {
+		for (it = friends_list.begin(); it != friends_list.end(); ++it) {
 			Socket *peer = *it;
 			if (player != peer) {
 				peer->msg_send(msg);
 			}
 		}
-
-
-	//	list<Socket *>::iterator it;
-	//	for (it = player_list.begin(); it != player_list.end(); ++it)
-	//	{
-	//		Socket *person;
-	//		if (player != person)
-	//			person->msg_send(msg);
-	//	}
 	}
 
+	void add_listener() {
+		// Step 1: Add code to manage a listener here
+		lock_guard<std::mutex> lk(player_lock);
+		friends_list.push_back(player);
+	}
 
+	void remove_listener() {
+		// Step 2: Add code to remove a listener here
+		lock_guard<std::mutex> lk(player_lock);
+		for (auto it = friends_list.begin(); it != friends_list.end(); ++it) {
+			// looking for entry in friends_list
+			Socket *peer = *it;
+			if (player == peer) { // found it!
+				friends_list.erase(it); // remove it!
+				//player->sock_close(); // close the socket
+				delete player;
+				break; // done
+			}
+		}
+	}
 
-	
+public:
+	Manager(Socket *socket) {
+		player = socket;
+		add_listener();
+	}
 
-
-
+	void operator()() {
+		do {
+			std::string msg;
+			player->msg_send("hello");
+			msg = player->msg_recv();
+			if (msg == "") {
+				cout << "One listener exiting!\n";
+				remove_listener();
+				break; // client disconnected, time to go!
+			}
+			else {
+				// send it to everyone!
+				send_to_all_friends(msg);
+			}
+		} while (true);
+	}
 };
 
+mutex Manager::player_lock;
+list<Socket *> Manager::friends_list;
 
 #endif
