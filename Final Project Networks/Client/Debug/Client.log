@@ -1,2 +1,33 @@
 ﻿  client_main.cpp
-c:\users\abagnall-smith20\desktop\final project networks\client\client_main.cpp : fatal error C1041: cannot open program database 'C:\Users\abagnall-smith20\Desktop\Final Project Networks\Client\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+c:\users\abagnall-smith20\desktop\final project networks\socket.h(208): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(151): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(156): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(173): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(194): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(224): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(243): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(273): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(304): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(312): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(327): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(348): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(357): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(361): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(387): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(393): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(407): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(424): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(433): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(437): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(458): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(462): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(476): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(490): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(492): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(504): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(522): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(529): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(554): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\client\player.h(561): warning C4018: '<': signed/unsigned mismatch
+  Client.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Client.exe
+  Client.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Client.pdb (Partial PDB)

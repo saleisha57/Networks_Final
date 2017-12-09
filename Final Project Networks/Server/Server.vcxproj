@@ -82,8 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Socket.h" />
-    <ClInclude Include="base.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="base.h" />
     <ClInclude Include="Manager.h" />
   </ItemGroup>
   <ItemGroup>

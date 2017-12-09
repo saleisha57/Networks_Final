@@ -1,6 +1,7 @@
 #ifndef __MANAGER_H__
 #define __MANAGER_H__
 #include "base.h"
+#include "Deck.h"
 
 /**
 Function class for execution in each thread spawned for a connection
@@ -51,7 +52,7 @@ private:
 			Socket *peer = *it;
 			if (player == peer) { // found it!
 				friends_list.erase(it); // remove it!
-				//player->sock_close(); // close the socket
+										//player->sock_close(); // close the socket
 				delete player;
 				break; // done
 			}
@@ -73,9 +74,22 @@ public:
 	void operator()() {
 		do {
 			std::string msg;
-			player->msg_send("hello");
+			get_stuff();
+			//player->msg_send("hello");
+			msg = get_hand();
+			player->msg_send(msg);
 			msg = player->msg_recv();
+			cout << msg << endl;
+			/*msg = get_hand();
+			player->msg_send(msg);*/
 
+			
+
+			/*for (int i = 0; i < 11; i++)
+			{
+				msg = get_hand()[i];
+				player->msg_send(msg);
+			}*/
 
 
 
@@ -97,6 +111,7 @@ public:
 		for (int i = 0; i < 11; i++)
 		{
 			player_hand.push_back(the_deck[i]);
+			cout << the_deck[i];
 		}
 		the_deck.erase(the_deck.begin(), the_deck.begin() + 11);
 
@@ -107,15 +122,29 @@ public:
 		the_deck.erase(the_deck.begin(), the_deck.begin() + 11);
 	}
 
-	vector<string> get_hand()
+	string get_hand()
 	{
-		return player_hand;
+		string hand_h;
+
+		for (int i = 0; i < 11; i++)
+		{
+			hand_h += player_hand[i];
+		}
+
+		return hand_h;
 	}
 
 
-	vector<string> get_foot()
+	string get_foot()
 	{
-		return player_foot;
+		string foot_h;
+
+		for (int i = 0; i < 11; i++)
+		{
+			foot_h += player_foot[i];
+		}
+
+		return foot_h; 
 	}
 
 

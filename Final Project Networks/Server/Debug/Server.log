@@ -1,1 +1,7 @@
-﻿C:\Users\abagnall-smith20\Desktop\Final Project Networks\Server\Server.vcxproj : error MSB4057: The target "Deploy" does not exist in the project.
+﻿  server_main.cpp
+c:\users\abagnall-smith20\desktop\final project networks\socket.h(208): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\server\deck.h(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\server\deck.h(84): warning C4018: '>': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\final project networks\server\deck.h(92): warning C4018: '>': signed/unsigned mismatch
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Server.exe
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\Final Project Networks\Debug\Server.pdb (Partial PDB)

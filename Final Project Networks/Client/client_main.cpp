@@ -22,48 +22,45 @@ int main()
 	}
 
 	// Step 1: Create a TCP socket
-	Socket client1("tcp");	
+	Socket client1("tcp");
 	/*Socket client2("tcp");
 	Socket client3("tcp");*/
 
 	/*vector<Socket> players;
-
 	players.push_back(client1);
 	players.push_back(client2);
 	players.push_back(client3);*/
 
 	// 127.0.0.1 is the IP address for the local host
-	cout << "Attempting to connect to 10.200.100.46" << PORT1 << endl;
+	cout << "Attempting to connect to 10.200.100.29" << PORT1 << endl;
 
 	// Step 2: Connect to server
 	/*for (int i = 0; i < 3; i++)
-	{ 
-		if (i == 0)
-		{*/
-	if (!client1.sock_connect("10.200.100.46", PORT1))
+	{
+	if (i == 0)
+	{*/
+	if (!client1.sock_connect("10.200.100.29", PORT1))
 	{
 		done("could not connect to server");
 	}
-	cout << "Connected to 127.0.0.1:" << PORT1 << endl;
-		/*}*/
+	cout << "Connected to 10.200.100.29:" << PORT1 << endl;
+	/*}*/
 	/*else if (i == 1)
-		{
-			if (!players[i].sock_connect("127.0.0.1", PORT1))
-			{
-				done("could not connect to server");
-			}
-
-			cout << "Connected to 127.0.0.1:" << PORT1 << endl;
-		}
+	{
+	if (!players[i].sock_connect("127.0.0.1", PORT1))
+	{
+	done("could not connect to server");
+	}
+	cout << "Connected to 127.0.0.1:" << PORT1 << endl;
+	}
 	else if (i == 2)
-		{
-			if (!players[i].sock_connect("127.0.0.1", PORT1))
-			{
-				done("could not connect to server");
-			}
-
-			cout << "Connected to 127.0.0.1:" << PORT1 << endl;
-		}		
+	{
+	if (!players[i].sock_connect("127.0.0.1", PORT1))
+	{
+	done("could not connect to server");
+	}
+	cout << "Connected to 127.0.0.1:" << PORT1 << endl;
+	}
 	}*/
 
 	vector<string> player_hand;
@@ -77,13 +74,24 @@ int main()
 	player_hand.clear();
 	player_foot.clear();
 
-
+	string msg;
 	for (int i = 0; i < 3; i++)
 	{
 		//string msg = players[i].msg_recv();
-		string msg = client1.msg_recv();
+		msg = client1.msg_recv();
+		cout << msg << endl;
+
+		client1.msg_send("hello server");
+
+		msg = client1.msg_recv();
 		cout << msg << endl;
 	}
+
+	client1.msg_send("hello server");
+
+	msg = client1.msg_recv();
+	cout << msg << endl;
+	
 
 
 	/*string msg = client1.msg_recv();
@@ -93,7 +101,7 @@ int main()
 
 
 
-	system("pause");
+	//system("pause");
 
 
 	done("Press enter to exit");

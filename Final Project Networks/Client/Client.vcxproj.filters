@@ -23,10 +23,10 @@
     <ClInclude Include="..\Socket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="base.h">
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -64,13 +64,13 @@ int main()
 			cout << "Connection made \n";                // Display when a connection is set up.
 			Manager *m = new Manager(conn);              // Create a manager object to use with the thread.
 			thread *thr = new thread(*m);                // Create a thread.
-			thr->detach();                               // Detach the thread.						
+			//thr->detach();                               // Detach the thread.						
 		} while (true);                                  // Do while loop.
 
 
-		// Citations in documentation
+														 // Citations in documentation
 
-		// Call the go again function.
+														 // Call the go again function.
 		again = go_again();
 
 
