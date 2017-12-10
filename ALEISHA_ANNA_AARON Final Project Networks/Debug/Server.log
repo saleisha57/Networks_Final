@@ -1,0 +1,13 @@
+﻿  server_main.cpp
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\socket.h(208): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\deck.h(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\deck.h(84): warning C4018: '>': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\deck.h(92): warning C4018: '>': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(171): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(185): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(220): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(227): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(237): warning C4018: '<': signed/unsigned mismatch
+c:\users\abagnall-smith20\desktop\aleisha_anna_aaron final project networks\server\manager.h(244): warning C4018: '<': signed/unsigned mismatch
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\ALEISHA_ANNA_AARON Final Project Networks\Debug\Server.exe
+  Server.vcxproj -> C:\Users\abagnall-smith20\Desktop\ALEISHA_ANNA_AARON Final Project Networks\Debug\Server.pdb (Partial PDB)
